@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+
+import '../../shered/styles/colors.dart';
 
 class homeScreen extends StatelessWidget {
   const homeScreen({Key? key}) : super(key: key);
@@ -7,7 +10,7 @@ class homeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromARGB(255, 245, 225, 225),
+        color: secndColor,
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
@@ -29,12 +32,12 @@ class homeScreen extends StatelessWidget {
                 width: 50,
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(fit:BoxFit.fill,
-                  image: NetworkImage('https://thumbs.dreamstime.com/b/golden-d-train-icon-isolated-white-background-render-219858566.jpg'),)),
+                  image: AssetImage('assets/images/Train_Logo.png'),)),
               ),
 
             ],)
             ,
-            SizedBox(height: 20,),
+            SizedBox(height: 10,),
 
              Container(
               // padding: EdgeInsets.symmetric(vertical: 10),
@@ -57,7 +60,7 @@ class homeScreen extends StatelessWidget {
                   )),
                   Container( 
                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-               color: Color.fromARGB(255, 211, 201, 201),
+               color: secndColor,
                ),
                     padding: EdgeInsets.all(5),
                    child: Row(
@@ -85,7 +88,7 @@ class homeScreen extends StatelessWidget {
                ),
              ),
 
-            SizedBox(height: 20,),
+            SizedBox(height: 10,),
 
              Container(
                padding: EdgeInsets.symmetric(vertical: 10),
@@ -103,7 +106,7 @@ class homeScreen extends StatelessWidget {
                ),
              ),
 
-                  SizedBox(height: 20,),
+                  SizedBox(height: 10,),
 
              Container(
                padding: EdgeInsets.symmetric(vertical: 10),
@@ -121,7 +124,7 @@ class homeScreen extends StatelessWidget {
                ),
              ),
 
-                          SizedBox(height: 20,),
+                          SizedBox(height: 10,),
 
              Container(
                padding: EdgeInsets.symmetric(vertical: 10),
@@ -144,7 +147,7 @@ class homeScreen extends StatelessWidget {
              Container(
                padding: EdgeInsets.all(15),
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-               color: Colors.purple,
+               color: defaultColor
                ),
                child: Center(child: Text('Find tickets',style: TextStyle(color: Colors.white),)),
              ),
@@ -154,7 +157,7 @@ class homeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text('Nows Flights',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
-                Text('View All',style: TextStyle(color: Colors.purple),),
+                Text('View All',style: TextStyle(color: defaultColor),),
               ],
              ),
 

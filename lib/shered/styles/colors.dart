@@ -14,4 +14,6 @@ Map<int, Color> color = {
   900: Color.fromRGBO(136, 14, 79, 1),
 };
 
-MaterialColor defaultColor = MaterialColor(0xFF880E4F, color);
+// MaterialColor defaultColor = MaterialColor(0xFF880E4F, color);
+const Color defaultColor = Colors.blue;
+Color secndColor = HexColor('#E2DBDB');

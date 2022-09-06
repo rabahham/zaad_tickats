@@ -89,13 +89,14 @@ class _ZaadTicktsLoginScreenState extends State<ZaadTicktsLoginScreen> {
                 emailField(
                   controller: emailController,
                   hintText: 'Email',
+                  
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 // passwordFielde,
                 passwordField(
-                  obscureText: true,
+                  obscureText: false,
                   // ZaadTicktsLoginCubit.get(context).passwordVisible,
                   controller: passwordController,
                   hintText: 'Password',

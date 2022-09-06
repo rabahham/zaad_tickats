@@ -88,14 +88,15 @@ Widget passwordField({
   bool autofocus = false,
   required Icon prefixIconicon,
   double borderRadius = 10,
-  cursorColors = Colors.purple,
-  selectionControlss = Colors.purple,
+  cursorColors = defaultColor,
+  selectionControlss = defaultColor,
 }) =>
     TextFormField(
         cursorColor: cursorColors,
         autofocus: autofocus,
         controller: controller,
         obscureText: obscureText,
+        
         onFieldSubmitted: onsubmit,
         validator: (value) {
           RegExp regex = new RegExp(r'^.{6,}$');
@@ -113,10 +114,11 @@ Widget passwordField({
         },
         textInputAction: TextInputAction.done,
         decoration: InputDecoration(
+          iconColor: defaultColor,
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.purple),
+            borderSide: BorderSide(color: defaultColor),
           ),
-          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.purple),),
+          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: defaultColor),),
           prefixIcon: prefixIconicon,
           suffixIcon: IconButton(
             icon: Icon(obscureText ? Icons.visibility : Icons.visibility_off,),
@@ -160,8 +162,9 @@ Widget textdField({
         onFieldSubmitted: onSubmit,
         onChanged: onchange,
         decoration: InputDecoration(
+          iconColor: defaultColor,
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.purple),
+            borderSide: BorderSide(color: defaultColor),
           ),
           prefixIcon: prefixIconicon,
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -179,7 +182,7 @@ Widget emailField({
   var prefixIconicon = const Icon(Icons.email),
   double borderRadius = 10,
   int maxlines = 1,
-  Color colorr = Colors.purple,
+  Color colorr = defaultColor,
 }) =>
     TextFormField(
         cursorColor: colorr,
@@ -203,8 +206,9 @@ Widget emailField({
         },
         textInputAction: TextInputAction.done,
         decoration: InputDecoration(
+          iconColor: colorr,
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.purple),
+            borderSide: BorderSide(color: defaultColor),
           ),
           prefixIcon: prefixIconicon,
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),

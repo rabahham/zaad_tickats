@@ -47,21 +47,22 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        actions: [
-          TextButton(
-            onPressed: () {
-              onsubmited();
-            },
-            child: Text('skip', style: TextStyle(color: Colors.white),),
-          ),
-        ],
-      ),
+      
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
           children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+            onPressed: () {
+                  onsubmited();
+            },
+            child: Text('skip', style: TextStyle(color: Colors.blue),),
+          ),
+                ],
+              ),
             Expanded(
               child: PageView.builder(
                 // physics: BouncingScrollPhysics(),
@@ -101,7 +102,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                 ),
                 Spacer(),
                 FloatingActionButton(
-                  backgroundColor: Colors.purple,
+                  backgroundColor: defaultColor,
                   onPressed: () {
                     if (isLast) {
                       onsubmited();

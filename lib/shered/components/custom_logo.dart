@@ -12,7 +12,7 @@ class CustomLogo extends StatelessWidget {
           children: [
             const Image(
               image: AssetImage(
-                'assets/images/logo.jpg',
+                'assets/images/Train_Logo.png',
               ),
             ),
           ],

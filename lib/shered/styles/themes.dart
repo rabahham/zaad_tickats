@@ -7,7 +7,7 @@ ThemeData lightThem = ThemeData(
   //   floatingActionButtonTheme:
   //      FloatingActionButtonThemeData(backgroundColor: Colors.deepOrange),
   fontFamily: 'Rubik',
-  primarySwatch: defaultColor,
+  primarySwatch: Colors.blue,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(
     titleSpacing: 20.0,
@@ -51,7 +51,7 @@ ThemeData darkThem = ThemeData(
     ),
   ),
   scaffoldBackgroundColor: HexColor('333739'),
-  primarySwatch: defaultColor,
+  primarySwatch: Colors.blue,
   appBarTheme: AppBarTheme(
     titleSpacing: 20.0,
     iconTheme: IconThemeData(
