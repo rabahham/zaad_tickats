@@ -4,6 +4,8 @@ import 'package:buy_tickets/screens/tickats_screen/tickat_screen.dart';
 import 'package:buy_tickets/screens/wallet_screen/wallet_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../shered/styles/colors.dart';
+
 class LayoutZaadTickets extends StatefulWidget {
   LayoutZaadTickets({Key? key}) : super(key: key);
 
@@ -52,13 +54,14 @@ class _LayoutZaadTicketsState extends State<LayoutZaadTickets> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: '',
           ),
           BottomNavigationBarItem(
-            backgroundColor:Color.fromARGB(255, 245, 225, 225),
+           
             icon: Icon(Icons.account_balance_wallet),
             label: '',
           ),
@@ -72,7 +75,8 @@ class _LayoutZaadTicketsState extends State<LayoutZaadTickets> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.purple,
+        backgroundColor: secndColor,
+        selectedItemColor: defaultColor,
         unselectedItemColor: Colors.blueGrey,
         onTap: _onItemTapped,
       ),

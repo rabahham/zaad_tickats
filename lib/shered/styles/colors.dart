@@ -16,4 +16,4 @@ Map<int, Color> color = {
 
 // MaterialColor defaultColor = MaterialColor(0xFF880E4F, color);
 const Color defaultColor = Colors.blue;
-Color secndColor = HexColor('#E2DBDB');
+Color secndColor = HexColor('#E4E4E4');
