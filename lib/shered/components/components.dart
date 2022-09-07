@@ -174,6 +174,50 @@ Widget textdField({
           ),
         ));
 
+//Text field
+Widget dafaulttextdField({
+  required TextEditingController controller,
+  required String hintText,
+  var onSubmit,
+  var onchange,
+  TextInputType keyboardType = TextInputType.text,
+  bool autofocus = false,
+  required Icon prefixIconicon,
+  double borderRadius = 10,
+  int maxlines = 1,
+}) =>
+    TextFormField(
+        maxLines: maxlines,
+        autofocus: autofocus,
+        controller: controller,
+        keyboardType: keyboardType,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return ("$hintText must not be  empty");
+          }
+
+          return null;
+        },
+        onSaved: (value) {
+          controller.text = value!;
+        },
+        textInputAction: TextInputAction.done,
+        onFieldSubmitted: onSubmit,
+        onChanged: onchange,
+        decoration: InputDecoration(
+          iconColor: defaultColor,
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: defaultColor),
+          ),
+          prefixIcon: prefixIconicon,
+          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          hintText: hintText,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(borderRadius),
+          ),
+        ));
+
+
 Widget emailField({
   required TextEditingController controller,
   required String hintText,
@@ -313,3 +357,46 @@ Color chooseToastColor(ToastStates state) {
   }
   return color;
 }
+Widget defaultFornField({
+   var NameController,
+  double margin = 3.0,
+   String? text,
+  double hintStylefontSise = 15.0,
+  double labelStylefontSize = 20.0,
+   VoidCallback? onTap,
+   IconData? iconText,
+  TextInputType keyboardType = TextInputType.text,
+  bool isClickable = true,
+}) =>
+    Container(
+        decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                 color: Colors.white,
+                 ),
+      margin: EdgeInsets.all(margin),
+      padding: EdgeInsets.all(0),
+      child: TextFormField(
+      enabled: isClickable,  
+        controller: NameController,
+        decoration: 
+        InputDecoration(
+             contentPadding: EdgeInsets.all(0),
+            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)),),
+            labelText: "$text",
+            labelStyle: TextStyle(fontSize: labelStylefontSize),
+            hintText: "Enter $text",
+            hintStyle: TextStyle(fontSize: hintStylefontSise),
+            prefixIcon: Icon(iconText)),
+        
+             
+        
+        keyboardType: keyboardType,
+        onTap: onTap ,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return 'password must not be empty';
+          }
+          return null;
+        },
+      ),
+    );

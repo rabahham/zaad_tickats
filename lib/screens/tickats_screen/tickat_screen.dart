@@ -5,8 +5,14 @@ class TickatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    // final size = AppLayout.getSize(context);
+    return SizedBox(
+       width:double.infinity ,
+        height: 200,
+        
+      child: Container(
+        color: Colors.red,
+        
         child: Text('Tickats SCREEN'),
       ),
     );
