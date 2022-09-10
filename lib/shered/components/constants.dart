@@ -20,3 +20,7 @@ void printFllTextss(String text) {
 }
 
 String token = 'hi';
+
+List<String> classTravling = ['Class A', 'Class B', 'Class C'];
+
+String? items1 = classTravling.first;

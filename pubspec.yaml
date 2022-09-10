@@ -48,6 +48,9 @@ dependencies:
   flutter_emoji: ">= 2.0.0"
   intl: ^0.17.0
   delayed_display: ^2.0.0
+  flutter_screenutil: ^5.4.0+1
+  flutter_svg: ^1.0.3
+  credit_card_input_form: ^2.3.0
   
 
 dev_dependencies:
@@ -79,6 +82,7 @@ flutter:
     - assets/images/onbording_1.png
     - assets/images/onbordng_2.png
     - assets/images/onbording_3.png
+    - assets/images/b-1.jpg
     
     - assets/images/Train_Logo.png
 

@@ -1,3 +1,8 @@
+import 'package:buy_tickets/shered/components/constants.dart';
+import 'package:intl/intl.dart';
+
+import '../../screens/tickats_screen/trip_ticket_page.dart';
+import '../../screens/wallet_screen/add_card_screen.dart';
 import '../styles/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -96,7 +101,6 @@ Widget passwordField({
         autofocus: autofocus,
         controller: controller,
         obscureText: obscureText,
-        
         onFieldSubmitted: onsubmit,
         validator: (value) {
           RegExp regex = new RegExp(r'^.{6,}$');
@@ -118,10 +122,14 @@ Widget passwordField({
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: defaultColor),
           ),
-          enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: defaultColor),),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: defaultColor),
+          ),
           prefixIcon: prefixIconicon,
           suffixIcon: IconButton(
-            icon: Icon(obscureText ? Icons.visibility : Icons.visibility_off,),
+            icon: Icon(
+              obscureText ? Icons.visibility : Icons.visibility_off,
+            ),
             onPressed: function,
           ),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
@@ -216,7 +224,6 @@ Widget dafaulttextdField({
             borderRadius: BorderRadius.circular(borderRadius),
           ),
         ));
-
 
 Widget emailField({
   required TextEditingController controller,
@@ -357,41 +364,40 @@ Color chooseToastColor(ToastStates state) {
   }
   return color;
 }
+
 Widget defaultFornField({
-   var NameController,
+  var NameController,
   double margin = 3.0,
-   String? text,
+  String? text,
   double hintStylefontSise = 15.0,
   double labelStylefontSize = 20.0,
-   VoidCallback? onTap,
-   IconData? iconText,
+  VoidCallback? onTap,
+  IconData? iconText,
   TextInputType keyboardType = TextInputType.text,
   bool isClickable = true,
 }) =>
     Container(
-        decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                 color: Colors.white,
-                 ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+      ),
       margin: EdgeInsets.all(margin),
       padding: EdgeInsets.all(0),
       child: TextFormField(
-      enabled: isClickable,  
+        enabled: isClickable,
         controller: NameController,
-        decoration: 
-        InputDecoration(
-             contentPadding: EdgeInsets.all(0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)),),
+        decoration: InputDecoration(
+            contentPadding: EdgeInsets.all(0),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
             labelText: "$text",
             labelStyle: TextStyle(fontSize: labelStylefontSize),
             hintText: "Enter $text",
             hintStyle: TextStyle(fontSize: hintStylefontSise),
             prefixIcon: Icon(iconText)),
-        
-             
-        
         keyboardType: keyboardType,
-        onTap: onTap ,
+        onTap: onTap,
         validator: (value) {
           if (value!.isEmpty) {
             return 'password must not be empty';
@@ -400,3 +406,278 @@ Widget defaultFornField({
         },
       ),
     );
+
+ShowTickts(context) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Container(
+        color: Colors.grey,
+        height: 400.0, // Change as per your requirement
+        width: 320.0, // Change as per your requirement
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: 15,
+          itemBuilder: (BuildContext context, int index) {
+            return SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TripTicketPage(pagess: 0),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(26),
+                      margin: EdgeInsets.fromLTRB(26, 10, 26, 12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            spreadRadius: 2,
+                            blurRadius: 4,
+                          )
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                height: 40,
+                                child: Center(
+                                  child: Image.asset(
+                                    'assets/images/Train_Logo.png',
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 28),
+                              Text(
+                                '29 OTC',
+                                style: TextStyle(
+                                  fontSize: 32,
+                                ),
+                              ),
+                              SizedBox(height: 28),
+                              Row(
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'From',
+                                        style: TextStyle(color: veppoLightGrey),
+                                      ),
+                                      Text('Porto Alegre'),
+                                      SizedBox(height: 28),
+                                      Text(
+                                        'To',
+                                        style: TextStyle(color: veppoLightGrey),
+                                      ),
+                                      Text('Florianópolis'),
+                                    ],
+                                  ),
+                                  Spacer(),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Depart',
+                                        style: TextStyle(color: veppoLightGrey),
+                                      ),
+                                      Text('6:30'),
+                                      SizedBox(height: 28),
+                                      Text(
+                                        'Arrive',
+                                        style: TextStyle(color: veppoLightGrey),
+                                      ),
+                                      Text('11:30'),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+      Align(
+        alignment: Alignment.bottomRight,
+        child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text("Cancel"),
+        ),
+      )
+    ],
+  );
+}
+
+ModifyTickets(context, dateController, fnc) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Container(
+        color: Colors.grey,
+        height: 400.0, // Change as per your requirement
+        width: 320.0, // Change as per your requirement
+        child: Column(
+          children: [
+            SizedBox(
+              height: 5,
+            ),
+            defaultFornField(
+              iconText: Icons.location_city,
+              text: 'Departure',
+            ),
+            defaultFornField(iconText: Icons.location_city, text: 'Arrival'),
+            defaultFornField(
+                iconText: Icons.person,
+                text: 'Number ',
+                keyboardType: TextInputType.number),
+            defaultFornField(
+                NameController: dateController,
+                iconText: Icons.date_range,
+                text: 'date',
+                onTap: () {
+                  showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime.now(),
+                          lastDate: DateTime.parse('2023-02-02'))
+                      .then(
+                    (value) {
+                      dateController.text = DateFormat.yMMMMd(value).toString();
+                    },
+                  );
+                }),
+            // defaultFornField(
+            //   iconText: Icons.location_city,
+            //   text: 'Class',
+            // ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+              ),
+              margin: EdgeInsets.all(3),
+              padding: EdgeInsets.only(left: 10, right: 10),
+              width: double.infinity,
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.class_,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  DropdownButton<String>(
+                    value: items1,
+                    icon: const Icon(Icons.arrow_downward),
+                    elevation: 16,
+                    style:
+                        const TextStyle(color: Color.fromARGB(255, 92, 91, 91)),
+                    onChanged: (v) {},
+                    items: classTravling
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ],
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                navigatTo(context, MyCard());
+              },
+              child: Container(
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: defaultColor),
+                child: Center(
+                    child: Text(
+                  'Applay',
+                  style: TextStyle(color: Colors.white),
+                )),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Align(
+        alignment: Alignment.bottomRight,
+        child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text("Cancel"),
+        ),
+      )
+    ],
+  );
+}
+
+DropDownClas(func) {
+  return Container(
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.white,
+    ),
+    margin: EdgeInsets.all(3),
+    padding: EdgeInsets.only(left: 10, right: 10),
+    width: double.infinity,
+    child: Row(
+      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(
+          Icons.class_,
+          color: Colors.grey,
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        DropdownButton<String>(
+          value: items1,
+          icon: const Icon(Icons.arrow_downward),
+          elevation: 16,
+          style: const TextStyle(color: Color.fromARGB(255, 92, 91, 91)),
+          onChanged: func,
+          items: classTravling.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+        ),
+      ],
+    ),
+  );
+}

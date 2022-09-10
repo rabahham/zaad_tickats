@@ -23,9 +23,11 @@ class _ZaadTicktsLoginScreenState extends State<ZaadTicktsLoginScreen> {
     // passwordVisible
     var passwordVisible = false;
 
-    void visible () { setState(() {
-      passwordVisible = !passwordVisible;
-    });    };
+    void visible() {
+      setState(() {
+        passwordVisible = !passwordVisible;
+      });
+    }
 
     // editing controller
     final TextEditingController emailController = new TextEditingController();
@@ -89,14 +91,13 @@ class _ZaadTicktsLoginScreenState extends State<ZaadTicktsLoginScreen> {
                 emailField(
                   controller: emailController,
                   hintText: 'Email',
-                  
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 // passwordFielde,
                 passwordField(
-                  obscureText: false,
+                  obscureText: true,
                   // ZaadTicktsLoginCubit.get(context).passwordVisible,
                   controller: passwordController,
                   hintText: 'Password',
@@ -110,7 +111,9 @@ class _ZaadTicktsLoginScreenState extends State<ZaadTicktsLoginScreen> {
                       //     password: passwordController.text);
                     }
                   },
-                  function: visible,
+                  function: () => setState(() {
+                    passwordVisible = !passwordVisible;
+                  }),
                 ),
 
                 SizedBox(

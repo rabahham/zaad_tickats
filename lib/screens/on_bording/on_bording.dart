@@ -29,7 +29,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
 
   List<BoardingModel> listBording = [
     BoardingModel(
-        image: 'assets/images/onbording_1.png',
+        image: 'assets/images/b-1.jpg',
         title: 'On Board 1 Title',
         body: 'On Board 1 Body'),
     BoardingModel(
@@ -47,22 +47,24 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
           children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  TextButton(
-            onPressed: () {
-                  onsubmited();
-            },
-            child: Text('skip', style: TextStyle(color: Colors.blue),),
-          ),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    onsubmited();
+                  },
+                  child: Text(
+                    'skip',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ],
+            ),
             Expanded(
               child: PageView.builder(
                 // physics: BouncingScrollPhysics(),
