@@ -44,7 +44,8 @@ class _WalletScreenState extends State<WalletScreen> {
   }
 
   Widget _operationsWidget() {
-    return Row(
+    return
+     Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         InkWell(child: _icon(Icons.transfer_within_a_station, "Transfer"),),

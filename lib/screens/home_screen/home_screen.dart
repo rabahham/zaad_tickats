@@ -17,177 +17,176 @@ class _homeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     int selected = 0;
-    List categories = ["Train","Subway", "Tram" ,"Bus"];
+    List categories = ["Train", "Subway", "Tram", "Bus"];
     var dateController = TextEditingController();
 
-
-
-
-
-
-    return Scaffold(
-      body: SingleChildScrollView (
-        child: Container(
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        body: Container(
           color: secndColor,
           padding: EdgeInsets.all(20),
           child: Column(
             children: [
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('good morning'),
-                    Text('Book Tickets',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold ),)
-                  ],
-                ),
-              
-                Container(
-                  
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(fit:BoxFit.fill,
-                    image: AssetImage('assets/images/Train_Logo.png'),)),
-                ),
-      
-              ],)
-              ,
-              SizedBox(height: 20,),
-      
-              //  Container(
-              //   // padding: EdgeInsets.symmetric(vertical: 10),
-              //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-              //    color: Colors.white,
-              //    ),
-              //    child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //     children: [
-              //       Container(
-                             
-                      
-              //          padding: EdgeInsets.all(10),
-              //           child: Row(
-                      
-              //         children: [
-              //           Text('trian ',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20  ),),
-              //           Icon(Icons.train),
-              //         ],
-              //       )),
-              //       Container( 
-              //        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-              //    color: secndColor,
-              //    ),
-              //         padding: EdgeInsets.all(5),
-              //        child: Row(
-                      
-              //         children: [
-              //           Text('Tram ',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20  ),),
-              //           Icon(Icons.tram),
-              //         ],
-              //       )),
-              //       Container( padding: EdgeInsets.only(left: 10,right: 10), child: Row(
-              //         children: [
-              //           Text('trian ',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20  ),),
-              //           Icon(Icons.train),
-              //         ],
-              //       )),
-              //       Container( padding: EdgeInsets.only(left: 10,right: 10), child: Row(
-              //         children: [
-              //           Text('bus ',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20  ),),
-              //           Icon(Icons.bus_alert_rounded),
-              //         ],
-              //       )),
-                  
-            
-              //     ],
-              //    ),
-          
-          
-              Container(
-      height: 45,
-    
-    // margin: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-    decoration: BoxDecoration(
-        color: 
-        defaultColor,
-        borderRadius: BorderRadius.circular(10)
-    ),
-    child: Stack(
-      children: [
-        SizedBox(
-            height: double.infinity,
-            width: double.infinity,
-            child: LayoutBuilder(
-                builder: (context,lay)=> AnimatedAlign(
-                  alignment: selected==0? Alignment.centerLeft : (
-                      selected==1?  Alignment.center :  Alignment.centerRight
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('good morning'),
+                      Text(
+                        'Book Tickets',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.bold),
+                      )
+                    ],
                   ),
-                  duration: const Duration(milliseconds: 60),
-                  child: Container(
-                    margin: EdgeInsets.all(3),
-                    width : lay.maxWidth/4,
+                  Container(
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
-                      
-                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage('assets/images/Train_Logo.png'),
+                        )),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+
+              // Container(
+              //     height: 45,
+              //     decoration: BoxDecoration(
+              //         color: defaultColor,
+              //         borderRadius: BorderRadius.circular(10)),
+              //     child: Stack(
+              //       children: [
+              //         SizedBox(
+              //             height: double.infinity,
+              //             width: double.infinity,
+              //             child: LayoutBuilder(
+              //               builder: (context, lay) => AnimatedAlign(
+              //                 alignment: selected == 0
+              //                     ? Alignment.centerLeft
+              //                     : (selected == 1
+              //                         ? Alignment.center
+              //                         : Alignment.centerRight),
+              //                 duration: const Duration(milliseconds: 120),
+              //                 child: Container(
+              //                   margin: EdgeInsets.all(3),
+              //                   width: lay.maxWidth / 4,
+              //                   decoration: BoxDecoration(
+              //                     color: Colors.white,
+              //                     borderRadius: BorderRadius.circular(10),
+              //                   ),
+              //                 ),
+              //               ),
+              //             )),
+              //         SizedBox(
+              //           height: double.infinity,
+              //           width: double.infinity,
+              //           child: Row(
+              //               children: categories
+              //                   .map(
+              //                     (tmp) => Expanded(
+              //                         child: GestureDetector(
+              //                       onTap: () => setState(() {
+              //                         print('vvvvvvvvvvvvvvvvvvvvvv');
+              //                         selected = categories.indexOf(tmp);
+              //                       }),
+              //                       child: Row(
+              //                         children: [
+              //                           Icon(Icons.train),
+              //                           Text(
+              //                             tmp,
+              //                             textAlign: TextAlign.center,
+              //                           ),
+              //                         ],
+              //                       ),
+              //                     )),
+              //                   )
+              //                   .toList()),
+              //         ),
+              //       ],
+              //     )),
+
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Column(children: [
+                  Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(25.0)),
+                    child: TabBar(
+                      indicator: BoxDecoration(
+                          color: Color.fromARGB(255, 128, 215, 255),
+                          borderRadius: BorderRadius.circular(25.0)),
+                      labelColor: Colors.white,
+                      unselectedLabelColor: Colors.black,
+                      tabs: const [
+                        Tab(
+                          text: 'Train',
+                          icon: Icon(Icons.train),
+                          iconMargin: EdgeInsets.all(0),
+                        ),
+                        Tab(
+                          text: 'bus',
+                          icon: Icon(Icons.bus_alert),
+                          iconMargin: EdgeInsets.all(0),
+                        ),
+                        Tab(
+                          text: 'Tram',
+                          icon: Icon(Icons.tram_outlined),
+                          iconMargin: EdgeInsets.all(0),
+                        ),
+                        Tab(
+                          text: 'Subway',
+                          icon: Icon(Icons.subway),
+                          iconMargin: EdgeInsets.all(0),
+                        ),
+                      ],
                     ),
                   ),
-                )
-            )
-        ),
-        SizedBox(
-          height: double.infinity,
-          width: double.infinity,
-          child: Row(
-              children:categories.map(
-                    (tmp) => Expanded(
-                    child: GestureDetector(
-                      onTap: ()=>setState(() {
-                        selected = categories.indexOf(tmp);
-                      }),
-                      child:   Row(
-                        children: [
-                          Icon(Icons.train),
-                          Text( tmp, textAlign: TextAlign.center,),
-                        ],
-                      ),
-                    )
-                ),
-              ).toList()
-          ),
-        ),
-      ],
-    )
-),
-      
-              SizedBox(height: 5,),
+                ]),
+              ),
 
-              defaultFornField(iconText: Icons.train ,text: 'Departure',),
-             
-
-              defaultFornField(iconText: Icons.train ,text: 'Arrival'),
-
-                
+              SizedBox(
+                height: 5,
+              ),
 
               defaultFornField(
-               NameController: dateController,iconText: Icons.date_range ,text: 'date',onTap: (){
-                showDatePicker(
-                  context: context, 
-                  initialDate: DateTime.now(), firstDate: DateTime.now(), 
-                  lastDate: DateTime.parse('2023-02-02')).then((value) 
-                 {
-                  dateController.text= DateFormat.yMMMMd(value).toString();
-                },
-                );
-              }),
+                iconText: Icons.train,
+                text: 'Departure',
+              ),
 
+              defaultFornField(iconText: Icons.train, text: 'Arrival'),
 
+              defaultFornField(
+                  NameController: dateController,
+                  iconText: Icons.date_range,
+                  text: 'date',
+                  onTap: () {
+                    showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime.now(),
+                            lastDate: DateTime.parse('2023-02-02'))
+                        .then(
+                      (value) {
+                        dateController.text =
+                            DateFormat.yMMMMd(value).toString();
+                      },
+                    );
+                  }),
 
-              
-                   
               //  Container(
               //    padding: EdgeInsets.symmetric(vertical: 10),
               //   decoration: BoxDecoration(
@@ -195,7 +194,7 @@ class _homeScreenState extends State<homeScreen> {
               //    color: Colors.white,
               //    ),
               //    child: Row(
-                
+
               //     children: [
               //        SizedBox(width: 20,),
               //         Icon(Icons.train),
@@ -204,16 +203,16 @@ class _homeScreenState extends State<homeScreen> {
               //     ],
               //    ),
               //  ),
-      
+
               //       SizedBox(height: 10,),
-      
+
               //  Container(
               //    padding: EdgeInsets.symmetric(vertical: 10),
               //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
               //    color: Colors.white,
               //    ),
               //    child: Row(
-                
+
               //     children: [
               //        SizedBox(width: 20,),
               //         Icon(Icons.train),
@@ -222,16 +221,16 @@ class _homeScreenState extends State<homeScreen> {
               //     ],
               //    ),
               //  ),
-      
+
               //               SizedBox(height: 10,),
-      
+
               //  Container(
               //    padding: EdgeInsets.symmetric(vertical: 10),
               //   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
               //    color: Colors.white,
               //    ),
               //    child: Row(
-                
+
               //     children: [
               //        SizedBox(width: 20,),
               //         Icon(Icons.calendar_month_outlined),
@@ -240,147 +239,171 @@ class _homeScreenState extends State<homeScreen> {
               //     ],
               //    ),
               //  ),
-               
-                      SizedBox(height: 10,),
-      
-               Container(
-                 padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                 color: defaultColor
-                 ),
-                 child: Center(child: Text('Find tickets',style: TextStyle(color: Colors.white),)),
-               ),
-                
-                
-                
-                 SizedBox(height: 20,),
-               Row(
+
+              SizedBox(
+                height: 10,
+              ),
+
+              Container(
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: defaultColor),
+                child: Center(
+                    child: Text(
+                  'Find tickets',
+                  style: TextStyle(color: Colors.white),
+                )),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text('Nows Flights',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
-                  Text('View All',style: TextStyle(color: defaultColor),),
+                  Text(
+                    'Nows Flights',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    'View All',
+                    style: TextStyle(color: defaultColor),
+                  ),
                 ],
-               ),
-               SizedBox(height: 15),
+              ),
+              SizedBox(height: 15),
 
-               Row(
-                   mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start, 
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                          ),
+                          padding: EdgeInsets.all(10),
+                          // color: Colors.white,
+                          width: 150,
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                height: 170,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image(
+                                    image: NetworkImage(
+                                        'https://news.radioalgerie.dz/sites/default/data/styles/d09_traditional/public/2022-03/SNTF.webp?h=4a7d1ed4&itok=tf92gi46'),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                  'La Société nationale des transports ferroviaires (SNTF) a annoncé, dans un communiqué, la reprise de la circulation des trains de la banlieue d Alger avec une légère perturbation, assurant que les travaux de réparation des installations électriques endommagés suite aux rafales de vents sont dans leur phase finale.'),
+                            ],
+                          ),
+                        ),
                       ),
-                      padding: EdgeInsets.all(10),
-                      // color: Colors.white,
-                      width: 150,
-                      child: Column(
-                        children: [
-                          Container(
-
-                            decoration:
-                             BoxDecoration(
-                           borderRadius: BorderRadius.circular(10), ),
-                            height: 170,
-                         
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image(image: NetworkImage('https://news.radioalgerie.dz/sites/default/data/styles/d09_traditional/public/2022-03/SNTF.webp?h=4a7d1ed4&itok=tf92gi46'),
-                              fit: BoxFit.cover,
+                      SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 120,
+                              width: double.infinity,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 128, 209, 182),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Discount for suver',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Take the survey about our services and get a discont 30%  ...',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
                               ),
                             ),
-                  
-                          ),
-                          SizedBox(height: 5,),
-                           Text('La Société nationale des transports ferroviaires (SNTF) a annoncé, dans un communiqué, la reprise de la circulation des trains de la banlieue d Alger avec une légère perturbation, assurant que les travaux de réparation des installations électriques endommagés suite aux rafales de vents sont dans leur phase finale.'),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(width:10 )
-                  ,
-                  Expanded(
-                    
-                    child: 
-                    Column(
-                  
-                    children: [
-                    Container(height: 120,
-                    width: double.infinity,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                 color: Color.fromARGB(255, 128, 209, 182),
-                 
-                 ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-
-                        Text('Discount for suver', style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700,color: Colors.white),),
-                        SizedBox(height: 10,),
-                        Text('Take the survey about our services and get a discont 30%  ...',
-                        style: TextStyle(color: Colors.white),),
-                      ],
-                    ),                 
-                 ),
-                     SizedBox(height: 15,),
-                     Container(height: 150,
-                     width: double.infinity,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration( borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(255, 255, 128, 128),
-                 ),
-                 child: Column(
-                  
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                   children: [
-                    SizedBox(height: 0,),
-                     Text('Take Tickts', style: TextStyle(color: Colors.white,fontWeight:FontWeight.bold,),),
-                      SizedBox(height: 10,),
-                      RichText(
-                        text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: '🌍',
-                                      style: TextStyle(fontSize: 28),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Container(
+                              height: 150,
+                              width: double.infinity,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 255, 128, 128),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    height: 0,
+                                  ),
+                                  Text(
+                                    'Take Tickts',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                     ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  RichText(
+                                    text: TextSpan(children: [
                                       TextSpan(
-                                      text: '🌍',
-                                      style: TextStyle(fontSize: 38),
-                                    ),
+                                        text: '🌍',
+                                        style: TextStyle(fontSize: 28),
+                                      ),
                                       TextSpan(
-                                      text: '🌍',
-                                      style: TextStyle(fontSize: 28),
-                                    ),
-                                    ]
+                                        text: '🌍',
+                                        style: TextStyle(fontSize: 38),
+                                      ),
+                                      TextSpan(
+                                        text: '🌍',
+                                        style: TextStyle(fontSize: 28),
+                                      ),
+                                    ]),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      ),
-                   
-                   ],
-                 ),
-                 ),
-
-
-                  ],
+                    ],
                   ),
-                  
-                  
-                  ),
-                  
-                 
-                ],
-               )
-      
+                ),
+              )
             ],
-      
           ),
         ),
       ),
     );
   }
 }
-

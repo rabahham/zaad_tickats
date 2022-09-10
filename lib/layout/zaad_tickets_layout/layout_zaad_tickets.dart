@@ -37,7 +37,7 @@ class _LayoutZaadTicketsState extends State<LayoutZaadTickets> {
 
     homeScreen(),
     WalletScreen(),
-    TickatScreen(),
+    TripsPage(),
     ProphiletScreen(),
   ];
 
